@@ -3,12 +3,13 @@
 
 #include "WPILib.h"
 
-class OI
-{
+class OI {
+
 private:
 
 public:
 	OI();
+
 };
 
 #endif
