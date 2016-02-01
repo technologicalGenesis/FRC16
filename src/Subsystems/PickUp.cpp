@@ -1,6 +1,6 @@
 #include "PickUp.h"
 #include "../RobotMap.h"
 
-PickUp :: Pickup(int ) :Subsystem ("PickUp") {
+PickUp :: Pickup(int intakePort) :Subsystem ("PickUp") {
 
 }
