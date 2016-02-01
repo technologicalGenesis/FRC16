@@ -14,7 +14,7 @@
 class DriveTrain: public Subsystem {
 
 private:
-	RobotDrive robot;
+	RobotDrive* robot;
 
 public:
 	DriveTrain(RobotDrive drive);

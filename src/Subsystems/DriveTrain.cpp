@@ -8,8 +8,8 @@
 #include "DriveTrain.h"
 #include "../RobotMap.h"
 
-DriveTrain::DriveTrain(RobotDrive drive): robot(drive), Subsystem("DriveTrain") {
-
+DriveTrain::DriveTrain(RobotDrive drive) :Subsystem("DriveTrain") {
+	robot = drive;
 }
 
 void DriveTrain::InitDefaultCommand() {
@@ -18,5 +18,7 @@ void DriveTrain::InitDefaultCommand() {
 }
 
 void DriveTrain::drive(float lSpeed, float rSpeed) {
-	robot.SetLeftRightMotorOutputs(lSpeed, rSpeed);
+	robot->SetLeftRightMotorOutputs(lSpeed, rSpeed);
 }
+
+
