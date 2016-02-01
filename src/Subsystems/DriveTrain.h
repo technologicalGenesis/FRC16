@@ -5,11 +5,22 @@
  *      Author: Benjamin
  */
 
-#ifndef SRC_SUBSYSTEMS_DRIVETRAIN_H_
-#define SRC_SUBSYSTEMS_DRIVETRAIN_H_
+#ifndef DRIVE_TRAIN_H
+#define DRIVE_TRAIN_H
 
+#include "Commands/Subsystem.h"
+#include "WPILib.h"
 
+class DriveTrain: public Subsystem {
 
+private:
+	RobotDrive robot;
 
+public:
+	DriveTrain(RobotDrive drive);
+	void InitDefaultCommand();
+	void drive(float lSpeed, float rSpeed);
+
+};
 
 #endif /* SRC_SUBSYSTEMS_DRIVETRAIN_H_ */
