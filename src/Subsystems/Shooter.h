@@ -18,7 +18,7 @@ private:
 	Talon* rMotor;
 
 public:
-	Shooter(Talon lShooterMotor, Talon rShooterMotor);
+	Shooter();
 	void InitDefaultCommand();
 	void shoot();
 	~Shooter();
