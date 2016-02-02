@@ -9,7 +9,7 @@
 #include "../RobotMap.h"
 
 DriveTrain::DriveTrain(RobotDrive drive) :Subsystem("DriveTrain") {
-	robot = drive;
+	robot = &drive;
 }
 
 void DriveTrain::InitDefaultCommand() {
