@@ -18,6 +18,7 @@ void DriveTrain::InitDefaultCommand() {
 }
 
 void DriveTrain::drive(float lSpeed, float rSpeed) {
+	//should be constantly getting speed inputs from the controller
 	robot->SetLeftRightMotorOutputs(lSpeed, rSpeed);
 }
 
