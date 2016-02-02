@@ -23,7 +23,7 @@
 const int FRONT_LEFT_MOTOR = 0;
 const int BACK_LEFT_MOTOR = 1;
 const int FRONT_RIGHT_MOTOR = 2;
-const int BACK_LEFT_MOTOR = 3;
+const int BACK_RIGHT_MOTOR = 3;
 const int RIGHT_SHOOTER_MOTOR = 4;
 const int LEFT_SHOOTER_MOTOR = 5;
 const int INTAKE_MOTOR = 6;
