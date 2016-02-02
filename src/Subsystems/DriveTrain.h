@@ -11,16 +11,16 @@
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 
-class DriveTrain: public Subsystem {
+class Drivetrain: public Subsystem {
 
 private:
 	RobotDrive* robot;
 
 public:
-	DriveTrain(RobotDrive drive);
+	Drivetrain(RobotDrive drive);
 	void InitDefaultCommand();
 	void drive(float lSpeed, float rSpeed);
 
 };
 
-#endif /* SRC_SUBSYSTEMS_DRIVETRAIN_H_ */
+#endif
