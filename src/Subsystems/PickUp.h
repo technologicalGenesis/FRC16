@@ -7,12 +7,12 @@
 class PickUp: Subsystem {
 
 private:
+public:
 	Talon* motors;
 
-public:
-	PickUp ();
+	PickUp();
 
-
-PickUp();
+	void Start();
+	void Stop();
 
 };
