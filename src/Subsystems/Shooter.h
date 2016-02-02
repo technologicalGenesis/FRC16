@@ -20,7 +20,7 @@ private:
 public:
 	Shooter();
 	void InitDefaultCommand();
-	void runShooter();
+	void run_shooter();
 	~Shooter();
 
 };

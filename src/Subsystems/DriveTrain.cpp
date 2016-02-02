@@ -8,7 +8,7 @@
 #include <Subsystems/Drivetrain.h>
 #include "../RobotMap.h"
 
-Drivetrain::Drivetrain(RobotDrive drive): Subsystem("DriveTrain") {
+Drivetrain::Drivetrain(RobotDrive drive): Subsystem("Drivetrain") {
 	robot = &drive;
 }
 
