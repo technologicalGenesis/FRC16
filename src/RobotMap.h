@@ -19,14 +19,15 @@
 // number and the module. For example you with a rangefinder:
 //const int RANGE_FINDER_PORT = 1;
 //const int RANGE_FINDER_MODULE = 1;
-
-const int FRONT_LEFT_MOTOR = 0;
-const int BACK_LEFT_MOTOR = 1;
-const int FRONT_RIGHT_MOTOR = 2;
-const int BACK_LEFT_MOTOR = 3;
-const int RIGHT_SHOOTER_MOTOR = 4;
-const int LEFT_SHOOTER_MOTOR = 5;
-const int INTAKE_MOTOR = 6;
-const int LIFT_MOTOR = 7;
+namespace RobotMap {
+	const int FRONT_LEFT_MOTOR = 0;
+	const int BACK_LEFT_MOTOR = 1;
+	const int FRONT_RIGHT_MOTOR = 2;
+	const int BACK_RIGHT_MOTOR = 3;
+	const int RIGHT_SHOOTER_MOTOR = 4;
+	const int LEFT_SHOOTER_MOTOR = 5;
+	const int INTAKE_MOTOR = 6;
+	const int LIFT_MOTOR = 7;
+}
 
 #endif
