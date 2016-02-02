@@ -20,11 +20,9 @@ private:
 public:
 	Shooter();
 	void InitDefaultCommand();
-	void shoot();
+	void runShooter();
 	~Shooter();
 
 };
 
-
-
-#endif /* SRC_SUBSYSTEMS_SHOOTER_H_ */
+#endif
