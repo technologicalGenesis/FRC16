@@ -13,7 +13,6 @@ public:
 
 	void Start();
 	void Stop();
-
 };
 
 #endif

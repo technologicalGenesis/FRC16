@@ -3,7 +3,6 @@
 
 BallCollector::BallCollector(): Subsystem("BallCollector") {
 	motor = new Talon(RobotMap::INTAKE_MOTOR);
-
 }
 
 void BallCollector::Start() {
