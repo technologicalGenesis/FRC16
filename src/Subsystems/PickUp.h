@@ -6,7 +6,6 @@
 
 class PickUp: Subsystem {
 
-private:
 public:
 	Talon* motors;
 

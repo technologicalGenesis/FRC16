@@ -1,9 +1,8 @@
 #include "PickUp.h"
 #include "../RobotMap.h"
 
-PickUp::PickUp(): Subsystem("PickUp"){
+PickUp::PickUp(): Subsystem("PickUp") {
 	motors = new Talon(RobotMap::INTAKE_MOTOR);
-
 
 }
 
