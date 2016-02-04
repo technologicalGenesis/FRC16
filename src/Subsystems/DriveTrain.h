@@ -1,9 +1,3 @@
-/*
- * DriveTrain.h
- *
- *  Created on: Feb 1, 2016
- *      Author: Benjamin
- */
 
 #ifndef DRIVE_TRAIN_H
 #define DRIVE_TRAIN_H
@@ -14,10 +8,10 @@
 class Drivetrain: public Subsystem {
 
 private:
-	RobotDrive* robot;
+	RobotDrive *robot;
 
 public:
-	Drivetrain(RobotDrive drive);
+	Drivetrain(RobotDrive *drive);
 	void InitDefaultCommand();
 	void drive(float lSpeed, float rSpeed);
 

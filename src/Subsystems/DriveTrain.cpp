@@ -1,15 +1,9 @@
-/*
- * DriveTrain.cpp
- *
- *  Created on: Feb 1, 2016
- *      Author: Benjamin
- */
 
 #include <Subsystems/Drivetrain.h>
 #include "../RobotMap.h"
 
-Drivetrain::Drivetrain(RobotDrive drive): Subsystem("Drivetrain") {
-	robot = &drive;
+Drivetrain::Drivetrain(RobotDrive *drive): Subsystem("Drivetrain") {
+	robot = drive;
 }
 
 void Drivetrain::InitDefaultCommand() {

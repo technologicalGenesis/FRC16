@@ -1,9 +1,3 @@
-/*
- * Shooter.h
- *
- *  Created on: Feb 1, 2016
- *      Author: Benjamin
- */
 
 #ifndef SHOOTER_H
 #define SHOOTER_H
