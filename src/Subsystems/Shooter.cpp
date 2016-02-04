@@ -1,4 +1,3 @@
-
 #include "Shooter.h"
 #include "../RobotMap.h"
 
