@@ -68,8 +68,7 @@ public:
 	float GetTrigger(int TriggerId, int TriggerOffset);
 
 	void Calibrate();
-	void RumbleLeft(float value);
-	void RumbleRight(float value);
+	void Rumble(float value);
 
 
 

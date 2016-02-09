@@ -44,9 +44,11 @@ float XboxController::GetTrigger (int TriggerId, int TriggerOffset) {
 	return (rawValue - TriggerOffset) * 2;
 }
 
-void XboxController::RumbleLeft(float value) {
+void XboxController::Rumble(float value) {
+	joystick->SetRumble(Joystick::RumbleType::kLeftRumble, value);
 	joystick->SetRumble(Joystick::RumbleType::kRightRumble, value);
 }
+
 
 XboxController::~XboxController() {
 	// TODO Auto-generated destructor stub
