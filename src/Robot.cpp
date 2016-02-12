@@ -2,12 +2,19 @@
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
+#include "XboxController.h"
+#include "Subsystems/Shooter.h"
+#include "Subsystems/BallCollector.h"
 
 class Robot: public IterativeRobot {
 
 private:
 	std::unique_ptr<Command> autonomousCommand;
 	SendableChooser *chooser;
+	std::unique_ptr<XboxController> controller;
+	std::unique_ptr<RobotDrive> robot_drive;
+	std::unique_ptr<Shooter> shooter;
+	std::unique_ptr<BallCollector> picker_upper;
 
 	void RobotInit() {
 		CommandBase::init();
@@ -15,6 +22,10 @@ private:
 		chooser->AddDefault("Default Auto", new ExampleCommand());
 		//chooser->AddObject("My Auto", new MyAutoCommand());
 		SmartDashboard::PutData("Auto Modes", chooser);
+		controller = std::unique_ptr<XboxController>(new XboxController(0));
+		robot_drive = std::unique_ptr<RobotDrive> (new RobotDrive(1,2,3,4));
+		shooter = std::unique_ptr<Shooter> (new Shooter());
+		picker_upper = std::unique_ptr<BallCollector> (new BallCollector());
 	}
 
 	/**
@@ -67,6 +78,23 @@ private:
 
 	void TeleopPeriodic() {
 		Scheduler::GetInstance()->Run();
+
+		std::unique_ptr<Vector> left_stick_vector = std::unique_ptr<Vector>(controller->GetLeftVector());
+		std::unique_ptr<Vector> right_stick_vector = std::unique_ptr<Vector>(controller->GetRightVector());
+
+		robot_drive->TankDrive(left_stick_vector->magnitude, right_stick_vector->magnitude, false);
+
+		if (controller->GetTrigger(controller->RightTrigger,controller->RightTriggerOffset) >= 0.5){
+			shooter->run_shooter();
+		}else{
+			shooter->stop_shooter();
+		}
+
+		if (controller->GetTrigger(controller->LeftTrigger,controller->LeftTriggerOffset) >= 0.5){
+			picker_upper->Start();
+		}else{
+			picker_upper->Stop();
+		}
 	}
 
 	void TestPeriodic() {
