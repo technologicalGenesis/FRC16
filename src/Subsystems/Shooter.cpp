@@ -22,7 +22,7 @@ void Shooter::stop_shooter() {
 	rMotor->SetSpeed(0.0);
 }
 
-Shooter::~Shooter(){
+Shooter::~Shooter() {
 	delete lMotor;
 	delete rMotor;
 }
