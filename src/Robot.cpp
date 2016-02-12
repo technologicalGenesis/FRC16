@@ -2,12 +2,15 @@
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
+#include "XboxController.h"
 
 class Robot: public IterativeRobot {
 
 private:
 	std::unique_ptr<Command> autonomousCommand;
 	SendableChooser *chooser;
+	std::unique_ptr<XboxController> controller;
+	std::unique_ptr<RobotDrive> robot_drive;
 
 	void RobotInit() {
 		CommandBase::init();
@@ -15,6 +18,8 @@ private:
 		chooser->AddDefault("Default Auto", new ExampleCommand());
 		//chooser->AddObject("My Auto", new MyAutoCommand());
 		SmartDashboard::PutData("Auto Modes", chooser);
+		controller = std::unique_ptr<XboxController>(new XboxController(0));
+		robot_drive = std::unique_ptr<RobotDrive> (new RobotDrive(1,2,3,4));
 	}
 
 	/**
@@ -67,6 +72,9 @@ private:
 
 	void TeleopPeriodic() {
 		Scheduler::GetInstance()->Run();
+		std::unique_ptr<Vector> left_stick_vector = std::unique_ptr<Vector>(controller->GetLeftVector());
+		std::unique_ptr<Vector> right_stick_vector = std::unique_ptr<Vector>(controller->GetRightVector());
+		robot_drive->TankDrive(left_stick_vector->magnitude, right_stick_vector->magnitude, false);
 	}
 
 	void TestPeriodic() {
