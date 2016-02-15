@@ -31,7 +31,7 @@ private:
 	}
 
 	void DisabledPeriodic() {
-		Scheduler::GetInstance()->Run();
+
 	}
 
 	void AutonomousInit() {
@@ -54,16 +54,16 @@ private:
 		robot_drive->TankDrive(left_stick_vector->magnitude, right_stick_vector->magnitude, false);
 
 		// Shooter control
-		if (controller->GetTrigger(controller->RightTrigger,controller->RightTriggerOffset) >= 0.5){
+		if (controller->GetTrigger(controller->RightTrigger,controller->RightTriggerOffset) >= 0.5) {
 			shooter->run_shooter();
-		}else{
+		} else {
 			shooter->stop_shooter();
 		}
 
 		// Ball Collector control
-		if (controller->GetTrigger(controller->LeftTrigger,controller->LeftTriggerOffset) >= 0.5){
+		if (controller->GetTrigger(controller->LeftTrigger,controller->LeftTriggerOffset) >= 0.5) {
 			ball_collector->Start();
-		}else{
+		} else {
 			ball_collector->Stop();
 		}
 	}
